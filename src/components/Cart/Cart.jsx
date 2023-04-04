@@ -1,11 +1,12 @@
 import React from 'react';
 import carrito from '../../img/cart.png';
 
-function Cart() {
+function Cart({count}) {
   return (
     <>
         <div className="cart">
-          <a href="."><img src={carrito} alt="carrito" className='img-fluid' width="30" height="24"/></a>
+          <img src={carrito} alt="carrito" className='img-fluid' width="30" height="24"/>
+          <span className='cart__count'>{count}</span>
         </div>
     </>
   );
