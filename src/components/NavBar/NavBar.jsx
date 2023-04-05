@@ -16,8 +16,8 @@ function NavBar({saludo, categorias}) {
             </div>
             <div className='container categorias'>
               <div className="d-grid gap-2 col-12 mx-auto">
-                {categorias.map((nameCategory)=>{
-                  return <CategoryBtn titleCategory={nameCategory}/>
+                {categorias.map((nameCategory, index)=>{
+                  return <CategoryBtn key={index} titleCategory={nameCategory}/>
                 })}
               </div>
             </div>
