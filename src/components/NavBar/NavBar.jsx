@@ -2,8 +2,9 @@ import React from 'react';
 import './NavBar.css';
 import Cart from '../Cart/Cart';
 import logoOso from '../../img/oso.png';
+import CategoryBtn from '../CategoryBtn/CategoryBtn';
 
-function NavBar({saludo}) {
+function NavBar({saludo, categorias}) {
     return (
         <>
           <nav className="navbar bg-dark">
@@ -14,10 +15,10 @@ function NavBar({saludo}) {
               <Cart count = '0'/>
             </div>
             <div className='container categorias'>
-              <div className="d-grid gap-2 col-4 mx-auto">
-                <button className="btn btn-secondary" type="button">Juguegos de mesa</button>
-                <button className="btn btn-secondary" type="button">Juguetes infantiles</button>
-                <button className="btn btn-secondary" type="button">Juguetes electronicos</button>
+              <div className="d-grid gap-2 col-12 mx-auto">
+                {categorias.map((nameCategory)=>{
+                  return <CategoryBtn titleCategory={nameCategory}/>
+                })}
               </div>
             </div>
           </nav>
